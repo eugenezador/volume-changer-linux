@@ -18,7 +18,7 @@
     <item row="1" column="1">
      <widget class="QPushButton" name="start">
       <property name="text">
-       <string>Старт +</string>
+       <string>++</string>
       </property>
      </widget>
     </item>
@@ -42,7 +42,7 @@
     <item row="1" column="0">
      <widget class="QPushButton" name="sbros">
       <property name="text">
-       <string>Сброс -</string>
+       <string>--</string>
       </property>
      </widget>
     </item>

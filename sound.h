@@ -25,6 +25,8 @@ public:
 
     void set_volume(char znak);
 
+    int is_number(QCharRef c);
+
 private slots:
     void on_start_clicked();
 

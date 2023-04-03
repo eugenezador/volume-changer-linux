@@ -39,11 +39,17 @@ void sound::get_cur_sound_value()
 
     QString temp = {'\0'};
     int k = 0;
-            if(StdOut[28] == '1'){
+            if(is_number(StdOut[28])){
                 temp[k++] = StdOut[28];
             }
-            temp[k++] = StdOut[29];
+
+            if(is_number(StdOut[29])) {
+                temp[k++] = StdOut[29];
+            }
+
+            if(is_number(StdOut[30])) {
             temp[k++] = StdOut[30];
+            }
 
     qDebug() << "temp str = " << temp;
 
@@ -76,6 +82,15 @@ void sound::set_volume(char znak)
     args << "set-sink-volume" << "@DEFAULT_SINK@" << new_sound_value;
     p->start("pactl",args,QIODevice::ReadOnly);
     p->waitForFinished();
+}
+
+int sound::is_number(QCharRef c)
+{
+    int result = 0;
+    if(c >= '0' && c <= '9') {
+        result = 1;
+    }
+    return result;
 }
 
 void sound::on_start_clicked()
